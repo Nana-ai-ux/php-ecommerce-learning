@@ -1,0 +1,48 @@
+.setting_container{
+    display: flex;
+}
+.sidebar{
+    width: 10%;
+    background-color: #1E5EFF;
+    padding: 0px 8px;
+    height: 130vh;
+}
+
+.main_page{
+    width: 80%;
+}
+
+
+/* page_count */
+.page_count{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 20px;
+}
+.items-count{
+    background-color: white;
+   box-shadow: 0px 7px 30px -20px;
+   width: 300px;
+}
+.items-count h1{
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Lobster Two", sans-serif;
+
+}
+body{
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+}
+::selection{
+    background-color: #F63E4E;
+    color: #F7DBBD;
+}
+/* Header */
+.menu-btn{
+    color: #404143;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.navbar{
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-image: ur;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
+}
+
+#navbar.scrolled {
+    background-color: #333;
+}
+#navbar.scrolled a {
+    color: white;
+}
+
+#navbar.scrolled .logo h1{
+    color: white !important;
+}
+.navbar .logo h1{
+    color: #414143;
+    border-bottom: 4px solid #FF7361;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    margin-left: 20px;
+    color: #424245;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.navbar .menu li .active{
+    border-bottom: 4px solid #FF514B;
+}
+.navbar .menu li a i{
+    color: #FF5052;
+}
+.navbar .menu li a:hover{
+    border-bottom: 4px solid #f63e4e;
+}
+
+/* Content */
+
+.content{
+    background-image: url(../images/shopping.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #424144;
+    height: 100vh;
+}
+.content h1{
+    font-size: 40px;
+    /* font-family: "Lobster Two", sans-serif; */
+    font-family: "Poppins", sans-serif;
+}
+.content p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.content button{
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    background: #FF4E48;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.content .btn:hover{
+    transform: scale(1.1) translateY(-3px);
+    background-color: #000;
+    color: #fff;
+}
+/* .card .img img{
+    height: 400px;
+    width: 400px;
+} */
+
+/* Products */
+
+.sec{
+    padding: 10px 5%;
+}
+.pheading{
+    display: flex;
+    justify-content: center;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.products .card{
+    width: 310px;
+    background: #f5f5f5;
+    box-shadow: 0 5px 20px gray;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 50px;
+}
+
+.products .card img{
+    height: 250px;
+    width: 100%;
+    margin-top: 10px;
+    object-fit: cover;
+}
+.products .card .desc{
+    padding: 5px 20px;
+    opacity: 0.8;
+}
+.products .card{
+    font-weight: 900;
+    font-size: 20px;
+    color: #424144;
+    padding: 0 20px;
+}
+.products .card .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.products .card .box .price{
+    color: #f63e4e;
+    font-size: 20px;
+    font-weight: bold;
+}
+.products .card .box .btn{
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 18px;
+    font-weight: 900;
+    border: 1px solid #f63e4e;
+    border-radius: 20px;
+}
+.products .card .box .btn:hover{
+    cursor: pointer;
+    background-color: #f63e4e;
+    color: white;
+}
+
+/* footer */
+footer{
+    background-color: #f3f4f6;
+    height: 10vh;
+}
+footer p{
+    text-align: center;
+    line-height: 10vh;
+}
+footer p a{
+    text-decoration: none;
+    color: #f63e4e;
+    font-weight: bold;
+}
+@media(max-width: 820px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+
+    .menu-btn i.active::before{
+        content: "\f00d";
+    }
+
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background-color: #f3f4f6;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+
+    .navbar .menu li{
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .menu li a{
+        margin: 10px 0;
+        font-size: 25px;
+    }
+}
