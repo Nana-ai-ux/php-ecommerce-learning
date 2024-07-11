@@ -123,34 +123,39 @@ function addcategory()
 
 function viewProduct()
 {
+    include 'include/db/config.php';
     ?>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Item name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+            <?php 
+            $sql="SELECT * FROM products";
+            $run=$conn->query($sql);
+            if($run->num_rows>0){
+                while($data=$run->fetch_assoc()){
+                    ?>
+
+<tr>
+                <th scope="row"><?php echo $data['name']; ?></th>
+                <td>$<?php echo $data['price']; ?></td>
+                <td><img height="100px" width="100px" class="backendimg" src="../frontend/productimage/<?php echo $data['image']; ?>" alt=""></td>
+                <td><a href="">Update</a></td>
+                <td><a href="">Delete</a></td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+<?php
+                }
+            }
+            ?>
+          
+           
         </tbody>
     </table>
     <?php
